@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/login">Login</a>
+    </nav>
+    <main>
+        <h1>Sign Up</h1>
+        <% if (error) { %>
+            <div class="card" style="background:#ffeaea; color:#c0392b;">
+                <%= error %>
+            </div>
+            <% } %>
+                <div class="container mt-5">
+                    <h2>Sign Up <span style="font-size: 0.7em; color: #888;">(Optional)</span></h2>
+                    <div class="alert alert-info" style="font-size: 1em;">
+                        <strong>Note for marker:</strong> Signup is optional. To log in and mark the app, use:<br>
+                        <b>Username:</b> gold<br>
+                        <b>Password:</b> smiths <span style="color:#888;">or</span> smiths123ABC$<br>
+                        (These are pre-created in the database.)
+                    </div>
+                    <form method="post" action="/signup">
+                        <label>Username:
+                            <input type="text" name="username" required>
+                        </label>
+                        <label>Password:
+                            <input type="password" name="password" required>
+                        </label>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <div style="margin-top:1em;">
+                        <span>Already have an account? <a href="/login">Login</a></span>
+                    </div>
+                </div>
+    </main>
+</body>
+
+</html>

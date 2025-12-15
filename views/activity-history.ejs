@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Activity History</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Activity History</h1>
+        <% if (achievements && achievements.length> 0) { %>
+            <% achievements.forEach(function(item) { %>
+                <div class="card">
+                    <b>
+                        <%= item.title %>
+                    </b>
+                    <span style="float:right; color:#8e44ad">
+                        <%= item.value %>
+                    </span>
+                    <div style="font-size:0.9em; color:#888;">Logged: <%= item.created_at %>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <div class="card">No activities yet. <a href="/add">Add one</a>!</div>
+                        <% } %>
+    </main>
+</body>
+
+</html>

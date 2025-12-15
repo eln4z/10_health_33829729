@@ -1,0 +1,5 @@
+home=http://localhost:8000/
+about=http://localhost:8000/about
+login=http://localhost:8000/login
+add=http://localhost:8000/add
+search=http://localhost:8000/search

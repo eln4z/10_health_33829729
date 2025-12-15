@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Plans</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>My Plans</h1>
+        <div class="card">
+            <form method="post" action="/plans">
+                <label for="goal">Select your goal:</label>
+                <select name="goal" id="goal" required>
+                    <option value="" <% if (!goal) { %>selected<% } %> disabled>Select...</option>
+                    <option value="healthy" <% if (goal==='healthy' ) { %>selected<% } %>>Stay Healthy</option>
+                    <option value="lose" <% if (goal==='lose' ) { %>selected<% } %>>Lose Weight</option>
+                    <option value="gain" <% if (goal==='gain' ) { %>selected<% } %>>Gain Weight</option>
+                </select>
+                <button type="submit">Show Plan</button>
+            </form>
+        </div>
+        <% if (goal==='healthy' ) { %>
+            <div class="card">
+                <b>Fitness Plan:</b>
+                <ul>
+                    <li>30 min brisk walk or light jog, 5 days/week</li>
+                    <li>2x/week full-body strength training</li>
+                    <li>Stretching or yoga 2x/week</li>
+                </ul>
+                <b>Diet Plan:</b>
+                <ul>
+                    <li>Balanced meals: lean protein, whole grains, fruits, vegetables</li>
+                    <li>Stay hydrated, limit processed foods</li>
+                </ul>
+            </div>
+            <% } else if (goal==='lose' ) { %>
+                <div class="card">
+                    <b>Fitness Plan:</b>
+                    <ul>
+                        <li>45 min cardio (run, cycle, swim), 4-5 days/week</li>
+                        <li>3x/week strength training (focus on large muscle groups)</li>
+                        <li>Active lifestyle: take stairs, walk more</li>
+                    </ul>
+                    <b>Diet Plan:</b>
+                    <ul>
+                        <li>Calorie deficit: eat less than you burn</li>
+                        <li>High protein, lots of vegetables, reduce sugar and refined carbs</li>
+                        <li>Drink water, avoid sugary drinks</li>
+                    </ul>
+                </div>
+                <% } else if (goal==='gain' ) { %>
+                    <div class="card">
+                        <b>Fitness Plan:</b>
+                        <ul>
+                            <li>Strength training 4-5x/week (progressive overload)</li>
+                            <li>Limit cardio to 1-2x/week</li>
+                            <li>Focus on compound lifts (squats, deadlifts, bench press)</li>
+                        </ul>
+                        <b>Diet Plan:</b>
+                        <ul>
+                            <li>Calorie surplus: eat more than you burn</li>
+                            <li>High protein, healthy fats, complex carbs</li>
+                            <li>Eat frequent meals and snacks</li>
+                        </ul>
+                    </div>
+                    <% } %>
+    </main>
+</body>
+
+</html>

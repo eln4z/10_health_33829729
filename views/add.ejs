@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Achievement - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/add">Add Achievement</a>
+        <a href="/search">Search</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Add Fitness Achievement</h1>
+        <% if (error) { %>
+            <div class="card" style="background:#ffeaea; color:#c0392b;">
+                <%= error %>
+            </div>
+            <% } %>
+                <form method="post" action="/add">
+                    <label>Title:
+                        <input type="text" name="title" required>
+                    </label>
+                    <label>Value:
+                        <input type="text" name="value" required>
+                    </label>
+                    <button type="submit">Add</button>
+                </form>
+    </main>
+</body>
+
+</html>

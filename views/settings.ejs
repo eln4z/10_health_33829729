@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Settings</h1>
+        <div class="card">
+            <form method="post" action="/settings">
+                <label>Name:
+                    <input type="text" name="name" value="<%= user.name %>" required>
+                </label>
+                <label>Date of Birth:
+                    <input type="date" name="dob"
+                        value="<%= user.dob ? user.dob.toISOString ? user.dob.toISOString().slice(0,10) : user.dob : '' %>"
+                        required>
+                </label>
+                <label>Email:
+                    <input type="email" name="email" value="<%= user.email %>" required>
+                </label>
+                <label>Height (cm):
+                    <input type="number" name="height_cm" value="<%= user.height_cm %>" min="0">
+                </label>
+                <label>Weight (kg):
+                    <input type="number" name="weight_kg" value="<%= user.weight_kg %>" min="0">
+                </label>
+                <button type="submit">Update</button>
+            </form>
+            <% if (success) { %>
+                <div class="card" style="background:#e8f5e9; color:#4a148c;">Settings updated!</div>
+                <% } %>
+        </div>
+    </main>
+</body>
+
+</html>

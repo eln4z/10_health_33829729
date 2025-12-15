@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <% if (user) { %>
+            <a href="/add">Add Achievement</a>
+            <a href="/search">Search</a>
+            <a href="/logout">Logout</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <% } %>
+    </nav>
+    <main>
+        <h1>Welcome to the Health & Fitness App</h1>
+        <% if (user) { %>
+            <div class="card">
+                <p>Hello, <b>
+                        <%= user.username %>
+                    </b>!</p>
+                <p>Track your achievements and stay healthy!</p>
+            </div>
+            <% } else { %>
+                <div class="card">
+                    <p>Please <a href="/login">login</a> to use the app.</p>
+                </div>
+                <% } %>
+    </main>
+</body>
+
+</html>

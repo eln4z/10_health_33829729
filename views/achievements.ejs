@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Achievements</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Achievements</h1>
+        <div class="card">
+            <form method="post" action="/add">
+                <label>Title:
+                    <input type="text" name="title" required>
+                </label>
+                <label>Value:
+                    <input type="text" name="value" required>
+                </label>
+                <button type="submit">Log Achievement</button>
+            </form>
+        </div>
+        <% if (achievements && achievements.length> 0) { %>
+            <% achievements.forEach(function(item) { %>
+                <div class="card">
+                    <b>
+                        <%= item.title %>
+                    </b>
+                    <span style="float:right; color:#8e44ad">
+                        <%= item.value %>
+                    </span>
+                    <div style="font-size:0.9em; color:#888;">Logged: <%= item.created_at %>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <div class="card">No achievements yet. Log your first above!</div>
+                        <% } %>
+    </main>
+</body>
+
+</html>

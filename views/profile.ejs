@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/add">Add Achievement</a>
+        <a href="/search">Search</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Your Profile</h1>
+        <div class="card">
+            <b>Name:</b>
+            <%= user.name %><br>
+                <b>Username:</b>
+                <%= user.username %><br>
+                    <b>Email:</b>
+                    <%= user.email %><br>
+                        <b>Date of Birth:</b>
+                        <%= user.dob.toISOString ? user.dob.toISOString().slice(0,10) : user.dob %><br>
+                            <b>Height:</b>
+                            <%= user.height_cm ? user.height_cm + ' cm' : 'N/A' %><br>
+                                <b>Weight:</b>
+                                <%= user.weight_kg ? user.weight_kg + ' kg' : 'N/A' %><br>
+        </div>
+        <div class="card" style="display:flex; flex-wrap:wrap; gap:1em; justify-content:center;">
+            <a href="/plans" class="profile-link">My Plans</a>
+            <a href="/fitness-level" class="profile-link">Fitness Level</a>
+            <a href="/activity-history" class="profile-link">Activity History</a>
+            <a href="/achievements" class="profile-link">Achievements</a>
+            <a href="/settings" class="profile-link">Settings</a>
+            <a href="/logout" class="profile-link">Logout</a>
+        </div>
+        <h2 id="achievements">Your Achievements</h2>
+        <% if (achievements.length===0) { %>
+            <div class="card">No achievements yet. <a href="/add">Add one</a>!</div>
+            <% } %>
+                <% achievements.forEach(function(item) { %>
+                    <div class="card">
+                        <b>
+                            <%= item.title %>
+                        </b> <span style="float:right; color:#27ae60">
+                            <%= item.value %>
+                        </span>
+                        <div style="font-size:0.9em; color:#888;">Logged: <%= item.created_at.toISOString ?
+                                item.created_at.toISOString().slice(0,10) : item.created_at %>
+                        </div>
+                    </div>
+                    <% }); %>
+    </main>
+</body>
+
+</html>

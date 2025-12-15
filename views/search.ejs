@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/add">Add Achievement</a>
+        <a href="/search">Search</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Search Achievements</h1>
+        <% if (error) { %>
+            <div class="card" style="background:#ffeaea; color:#c0392b;">
+                <%= error %>
+            </div>
+            <% } %>
+                <form method="post" action="/search">
+                    <label>Search:
+                        <input type="text" name="query" required>
+                    </label>
+                    <button type="submit">Search</button>
+                </form>
+                <% if (results) { %>
+                    <h2>Results</h2>
+                    <% results.forEach(function(item) { %>
+                        <div class="card">
+                            <b>
+                                <%= item.title %>
+                            </b> <span style="float:right; color:#27ae60">
+                                <%= item.value %>
+                            </span>
+                        </div>
+                        <% }); %>
+                            <% } %>
+    </main>
+</body>
+
+</html>

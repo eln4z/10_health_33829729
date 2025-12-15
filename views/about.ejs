@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <% if (user) { %>
+            <a href="/add">Add Achievement</a>
+            <a href="/search">Search</a>
+            <a href="/logout">Logout</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <% } %>
+    </nav>
+    <main>
+        <h1>About</h1>
+        <div class="card">
+            <p>This app helps you track your health and fitness achievements. It is designed to be simple, secure, and
+                user-friendly.</p>
+            <ul>
+                <li>Log your fitness achievements</li>
+                <li>Search and review your progress</li>
+                <li>Stay motivated and healthy</li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

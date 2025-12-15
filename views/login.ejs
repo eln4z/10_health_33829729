@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Health & Fitness App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+    <main>
+        <h1>Login</h1>
+        <% if (error) { %>
+            <div class="card" style="background:#ffeaea; color:#c0392b;">
+                <%= error %>
+            </div>
+            <% } %>
+                <form method="post" action="/login">
+                    <label>Username:
+                        <input type="text" name="username" required>
+                    </label>
+                    <label>Password:
+                        <input type="password" name="password" required>
+                    </label>
+                    <button type="submit">Login</button>
+                </form>
+                <div style="margin-top:1em;">
+                    <span>Don't have an account? <a href="/signup">Sign up</a></span>
+                </div>
+    </main>
+</body>
+
+</html>

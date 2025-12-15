@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness Level</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <main>
+        <h1>Fitness Level</h1>
+        <div class="card">
+            <b>Level:</b>
+            <%= level %><br>
+                <b>Points:</b>
+                <%= fitnessPoints %> / <%= nextLevel %>
+                        <div style="background:#ececec; border-radius:8px; margin:1em 0; height:24px; width:100%;">
+                            <div
+                                style="background:#8e44ad; height:24px; border-radius:8px; width:<%= Math.min(100, Math.round(100*fitnessPoints/nextLevel)) %>%;">
+                            </div>
+                        </div>
+                        <div style="color:#888; font-size:0.95em;">Add more achievements to increase your fitness level!
+                        </div>
+                        <ul style="margin-top:1em;">
+                            <li>Beginner: 0-4 points</li>
+                            <li>Intermediate: 5-14 points</li>
+                            <li>Advanced: 15+ points</li>
+                        </ul>
+        </div>
+    </main>
+</body>
+
+</html>
