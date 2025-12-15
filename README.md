@@ -2,6 +2,10 @@
 
 Welcome! This is a simple, user-friendly health and fitness web app built for my Dynamic Web Apps coursework. It helps you log in, track your achievements, monitor your fitness level, and get personalized plans—all in one place.
 
+## Live Demo
+
+- [App Home](http://www.doc.gold.ac.uk/usr/454/)
+
 ## How to Run the App
 
 1. **Clone this repository**
