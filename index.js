@@ -8,6 +8,9 @@ const path = require('path');
 const app = express();
 const PORT = 8000;
 
+const BASE_PATH = process.env.HEALTH_BASE_PATH || '';
+const url = (path) => `${BASE_PATH}${path}`;
+
 // MySQL connection pool
 const db = mysql.createPool({
   host: process.env.HEALTH_HOST || 'localhost',
